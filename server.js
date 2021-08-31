@@ -11,6 +11,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.send("Hello")
+})
+
 app.post("/linter", (req, res) => {
   if (req.method === "POST") {
     const { code, EsLintRules } = req.body;
